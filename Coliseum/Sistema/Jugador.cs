@@ -6,19 +6,16 @@ using System.Threading.Tasks;
 
 namespace Coliseum
 {
-    class Jugador
+    public class Jugador
     {
-        string Nombre { get; set; }
-        int Dinero { get; set; }
-        EscuelaDeGladiadores Escuela { get; set; }
+        public string Nombre { get; set; }
+        public int Dinero { get; set; }
 
         public Jugador()
         {
             Dinero = 0;
             Console.WriteLine("Ingresa el nombre del nuevo Jugador");
             Nombre = Console.ReadLine();
-            Escuela = new EscuelaDeGladiadores();
-            Escuela.Menu();
         }
 
     }

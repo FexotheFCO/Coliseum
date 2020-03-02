@@ -6,16 +6,22 @@ using System.Threading.Tasks;
 
 namespace Coliseum
 {
-    class Partida
+    public class Partida
     {
-        List<string> datos { get; set; }
-        string Nombre { get; set; } 
-        Jugador Jugador { get; set; }
+        public string Nombre { get; set; } 
+        public Jugador Jugador { get; set; }
+
+        public EscuelaDeGladiadores Escuela { get; set; }
 
         public Partida()
         {
-            Jugador = new Jugador(); 
+            Jugador = new Jugador();
+            Escuela = new EscuelaDeGladiadores();
         }
 
+        public void CorrerMenu()
+        {
+            Escuela.Menu();
+        }
     }
 }

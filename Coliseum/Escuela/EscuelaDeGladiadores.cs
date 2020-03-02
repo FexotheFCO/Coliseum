@@ -8,10 +8,11 @@ namespace Coliseum
 {
     public class EscuelaDeGladiadores
     {
-        List<Gladiador> Gladiadores { get; set; }
+        
+        public List<Gladiador> Gladiadores { get; set; }
         Tienda tiendaDeGladiadores{ get; set; }
 
-        string Nombre { get; set; }
+        public string Nombre { get; set; }
 
         public EscuelaDeGladiadores()
         {
@@ -26,7 +27,7 @@ namespace Coliseum
             do
             {
                 Console.Clear();
-                Console.WriteLine("1.Ir a la tienda de gladiadores\n2.Mostrar gladiadores\n3.Torneos\n4.Salir");
+                Console.WriteLine("1.Ir a la tienda de gladiadores\n2.Mostrar gladiadores\n3.Torneos\n4.Guardar\n5.Salir");
                 try
                 {
                     int decision = Int32.Parse(Console.ReadLine());

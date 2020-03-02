@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Coliseum.Sistema;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Coliseum
 {
     class Program
     {
+        static Partida partida;
         static void Main(string[] args)
         {
             MenuPrincipal();
@@ -65,7 +67,7 @@ namespace Coliseum
             do
             {
                 Console.Clear();
-                Console.WriteLine("1.Nueva Partida\n2.Cargar\n3.Salir");
+                Console.WriteLine("1.Nueva Partida\n2.Cargar\n3.Salir\n4.Guardar");
                 try
                 {
                     int decision = Int32.Parse(Console.ReadLine());
@@ -79,6 +81,9 @@ namespace Coliseum
                             break;
                         case 3:
                             salir = true;
+                            break;
+                        case 4:
+                            Guardar();
                             break;
                         default:
                             Console.WriteLine("Por favor elija una opcion correcta");
@@ -95,11 +100,20 @@ namespace Coliseum
         }
         static void NuevaPartida()
         {
-            Partida nuevaPartida = new Partida();
+            partida = new Partida();
+            SistemaCargaLectura scl = new SistemaCargaLectura();
+            scl.guardarPartida(partida);
+            partida.CorrerMenu();
         }
         static void Cargar()
         {
 
+        }
+
+        static void Guardar()
+        {
+            SistemaCargaLectura scl = new SistemaCargaLectura();
+            scl.guardarPartida(partida);
         }
     }
 } 
