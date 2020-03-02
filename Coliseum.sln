@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Coliseum", "Coliseum\Coliseum.csproj", "{D6E1F936-5B9F-427D-A05C-4E1A3AF85FCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColiseumTest", "ColiseumTest\ColiseumTest.csproj", "{1EFDC27F-FF7F-4E1F-8ECE-41D180C98F30}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{D6E1F936-5B9F-427D-A05C-4E1A3AF85FCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6E1F936-5B9F-427D-A05C-4E1A3AF85FCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6E1F936-5B9F-427D-A05C-4E1A3AF85FCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EFDC27F-FF7F-4E1F-8ECE-41D180C98F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EFDC27F-FF7F-4E1F-8ECE-41D180C98F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EFDC27F-FF7F-4E1F-8ECE-41D180C98F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EFDC27F-FF7F-4E1F-8ECE-41D180C98F30}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

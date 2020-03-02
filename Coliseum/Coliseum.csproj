@@ -48,11 +48,14 @@
     <Compile Include="Armor\Casco.cs" />
     <Compile Include="Armor\Pechera.cs" />
     <Compile Include="Armor\Piernas.cs" />
-    <Compile Include="Jugador.cs" />
-    <Compile Include="Luchador.cs" />
+    <Compile Include="Escuela\EscuelaDeGladiadores.cs" />
+    <Compile Include="Sistema\Jugador.cs" />
+    <Compile Include="Escuela\Gladiador.cs" />
     <Compile Include="Sistema\Partida.cs" />
     <Compile Include="Sistema\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Escuela\Tienda.cs" />
+    <Compile Include="Torneos\Encuentro.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

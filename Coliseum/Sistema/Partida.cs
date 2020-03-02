@@ -10,6 +10,12 @@ namespace Coliseum
     {
         List<string> datos { get; set; }
         string Nombre { get; set; } 
+        Jugador Jugador { get; set; }
+
+        public Partida()
+        {
+            Jugador = new Jugador(); 
+        }
 
     }
 }

@@ -11,7 +11,6 @@ namespace Coliseum
         static void Main(string[] args)
         {
             MenuPrincipal();
-            Console.Read();
         }
         static string Inicio()
         {
@@ -33,20 +32,29 @@ namespace Coliseum
                 Console.Clear();
                 Console.WriteLine(Inicio());
                 Console.WriteLine("1.Un Jugador\n2.Multijugador\n3.Salir");
-                int decision = Int32.Parse(Console.ReadLine());
-                switch (decision)
+                try
                 {
-                    case 1:
-                        UnJugador();
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        salir = true;
-                        break;
-                    default:
-                        Console.WriteLine("Por favor elija una opcion correcta");
-                        break;
+                    int decision = Int32.Parse(Console.ReadLine());
+                    switch (decision)
+                    {
+                        case 1:
+                            UnJugador();
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            salir = true;
+                            break;
+                        default:
+                            Console.WriteLine("Por favor elija una opcion correcta");
+                            Console.ReadKey();
+                            break;
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Por favor escriba un numero");
+                    Console.ReadKey();
                 }
             } while (!salir);
         }
@@ -58,27 +66,36 @@ namespace Coliseum
             {
                 Console.Clear();
                 Console.WriteLine("1.Nueva Partida\n2.Cargar\n3.Salir");
-                int decision = Int32.Parse(Console.ReadLine());
-                switch (decision)
+                try
                 {
-                    case 1:
-                        NuevaPartida();
-                        break;
-                    case 2:
-                        Cargar();
-                        break;
-                    case 3:
-                        salir = true;
-                        break;
-                    default:
-                        Console.WriteLine("Por favor elija una opcion correcta");
-                        break;
+                    int decision = Int32.Parse(Console.ReadLine());
+                    switch (decision)
+                    {
+                        case 1:
+                            NuevaPartida();
+                            break;
+                        case 2:
+                            Cargar();
+                            break;
+                        case 3:
+                            salir = true;
+                            break;
+                        default:
+                            Console.WriteLine("Por favor elija una opcion correcta");
+                            Console.ReadKey();
+                            break;
+                    }
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Por favor escriba un numero");
+                    Console.ReadKey();
                 }
             } while (!salir);
         }
         static void NuevaPartida()
         {
-
+            Partida nuevaPartida = new Partida();
         }
         static void Cargar()
         {
