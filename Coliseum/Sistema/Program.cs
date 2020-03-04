@@ -14,7 +14,10 @@ namespace Coliseum
         static void Main(string[] args)
         {
             SistemaCargaLectura scl = new SistemaCargaLectura();
-            Partidas = scl.cargarPartidas();
+            if(scl.cargarPartidas() != null)
+            {
+                Partidas = scl.cargarPartidas();
+            }
             MenuPrincipal();
         }
         static string Inicio()
@@ -70,32 +73,46 @@ namespace Coliseum
             do
             {
                 Console.Clear();
-                foreach(Partida partida in Partidas)
+                for (int i = 1; i <= 3; i++)
                 {
-                    Console.WriteLine(partida.Nombre);
+                    try
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine(i + "." + Partidas[i].Nombre);
+                        Console.ResetColor();
+                    }
+                    catch (Exception)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(i + "." + "Nueva Partida");
+                        Console.ResetColor();
+                    }
                 }
-                Console.WriteLine("1.Nueva Partida\n2.Cargar\n3.Salir\n4.Guardar");
+                Console.WriteLine("\n4.Salir");
                 try
                 {
                     int decision = Int32.Parse(Console.ReadLine());
-                    switch (decision)
+                    if (decision == 4)
                     {
-                        case 1:
-                            NuevaPartida();
-                            break;
-                        case 2:
-                            Cargar();
-                            break;
-                        case 3:
+                        salir = true;
+                    }
+                    else if(decision > 4)
+                    {
+                        Console.WriteLine("Por favor escriba un numero correcto");
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        try
+                        {
+                            Partidas[decision].CorrerMenu();
                             salir = true;
-                            break;
-                        case 4:
-                            Guardar();
-                            break;
-                        default:
-                            Console.WriteLine("Por favor elija una opcion correcta");
-                            Console.ReadKey();
-                            break;
+                        }
+                        catch (Exception)
+                        {
+                            NuevaPartida();
+                            salir = true;
+                        }
                     }
                 }
                 catch (FormatException)
@@ -106,8 +123,9 @@ namespace Coliseum
             } while (!salir);
         }
         static void NuevaPartida()
-        { 
+        {
             //Se crea la partida
+            Console.Clear();
             Console.WriteLine("Escriba el nombre de la nueva partida");
             string nombre = Console.ReadLine();
             Partidas.Add(new Partida(nombre));

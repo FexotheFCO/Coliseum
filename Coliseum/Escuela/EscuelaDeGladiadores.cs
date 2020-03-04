@@ -34,7 +34,7 @@ namespace Coliseum
             do
             {
                 Console.Clear();
-                Console.WriteLine("1.Ir a la tienda de gladiadores\n2.Mostrar gladiadores\n3.Torneos\n4.Guardar\n5.Salir");
+                Console.WriteLine("1.Ir a la tienda de gladiadores\n2.Mostrar gladiadores\n3.Torneos\n4.Salir");
                 try
                 {
                     int decision = Int32.Parse(Console.ReadLine());
