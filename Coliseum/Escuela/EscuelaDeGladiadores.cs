@@ -4,24 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Coliseum.Torneos;
+using Newtonsoft.Json;
+
 namespace Coliseum
 {
     public class EscuelaDeGladiadores
     {
-        List<Gladiador> Gladiadores { get; set; }
+        
+        public List<Gladiador> Gladiadores { get; set; }
         Tienda tiendaDeGladiadores{ get; set; }
+        public string Nombre { get; set; }
 
-        string Nombre { get; set; }
 
+
+        [JsonConstructor]
         public EscuelaDeGladiadores()
         {
+
+        }
+        public EscuelaDeGladiadores(string nombre)
+        {
             Gladiadores = new List<Gladiador>();
-            Console.WriteLine("Ingresa el nombre de tu nueva escuela de gladiadores");
-            Nombre = Console.ReadLine();
-            tiendaDeGladiadores = new Tienda();
+            this.Nombre = nombre;   
         }
         public void Menu()
         {
+            tiendaDeGladiadores = new Tienda();
             bool salir = false;
             do
             {
